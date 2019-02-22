@@ -27,7 +27,7 @@ This is how basic showCase setup looks like:
 
 Note: classes and id's are arbitrary
 
-Note 2: all classes are removed in cloned version so you should use id's for styling elements while classes should be use for positioning
+Note 2: all classes are removed in cloned version so you should use id's for styling elements while classes should be used for positioning
 
 #### HTML
 
@@ -50,3 +50,6 @@ $("#firstBox").click(function() {
     $("#firstBox").showCase(1500);
 });
 ```
+Elements with "display-to-none" class are shown after plugin is called. Elements without display-to-none class are displayed and normaly contain elements title or description.
+
+Here's working fiddle of showCase : [jsFiddle](https://jsfiddle.net/Cagger/q2jasc6u/)
