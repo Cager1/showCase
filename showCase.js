@@ -2,16 +2,14 @@ $(document).ready(function() {
 
 	// Prevents multiple openings
 	var counter = 0;
-
-	// setWidth = Set width of element which will be shown after event
-	// setHeight = Set height of element which will be shown after event
-	// classRemoval = remove classes which can disturb width/height (Bootstrap classes exc.)
+  
 	// speed = animation speed
-	$.fn.showCase = function(setWidth, setHeight, classRemoval, speed) {
+	$.fn.showCase = function(speed) {
 
 		// clones item
-		var clone = $(this).clone().prependTo($(this).parent()).addClass("center display-to-none").removeClass(classRemoval).removeAttr("id");
-		// makes sure no other item is displayed
+    // upon cloning removes all classes so it will not interfere with final positioning - Use all positioning CSS on classes and styling on ID's
+		var clone = $(this).clone().prependTo($(this).parent()).removeAttr("class").addClass("center display-to-none");
+		// makes sure no other element is displayed
 		if (counter === 0) {
 
 			// Element growing animation
@@ -21,11 +19,15 @@ $(document).ready(function() {
 				height: "0",
 				zIndex: "1000"
 			});
+      
+      // shows all hidden elements inside parent element. 
 			clone.find("*").removeClass("display-to-none");
 			close = clone.prepend("<div class='close'>X</div");
 			clone.animate({
-				width: setWidth, // Set width of element
-				height: setHeight, // Set height of element
+				width: $(this).parent().width() - 50, // Set width of element based on width of parent element
+        
+				height: $(this).parent().height() - 50, // Set height of elementbased on height of parent element
+        
 			}, speed);
 			counter = 1;
 		}
@@ -42,4 +44,15 @@ $(document).ready(function() {
 		});
 		return this;
 	};
+  
+  $("#firstBox").click(function() {
+  	$("#firstBox").showCase(1500);
+  });
+  
+  $("#secondBox").click(function() {
+  	$("#secondBox").showCase(1500);
+  });
+  $("#thirdBox").click(function() {
+  	$("#thirdBox").showCase(1500);
+  });
 });
