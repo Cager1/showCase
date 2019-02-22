@@ -18,11 +18,7 @@ and you will have to [download](https://github.com/Cager1/showCase/archive/maste
 
 ### Usage:
 
-`$.showCase(setWidth, setHeight, speed);`
-
-> **setWidth** is your desired width of element after event is triggered.
-
-> **setHeight** is your desired height of element after event is triggered.
+`$.showCase(speed);`
 
 > **speed** is your desired animation speed.
 
@@ -30,6 +26,6 @@ Example:
 
 ```
 $("#something").click(function() {
-    $("#something").showCase($("#something").width() * 2, $("#something").height() * 2, 1500);
+    $("#something").showCase(1500);
 });
 ```
