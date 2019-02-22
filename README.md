@@ -1,6 +1,6 @@
 # showCase
 Jquery plugin for displaying photos/articles etc.
-<!-- gif coming soon -->
+
 ![showCase gif](http://g.recordit.co/TUv7ilBmtO.gif)
 
 ## How it works?
